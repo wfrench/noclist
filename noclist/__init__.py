@@ -1,0 +1,12 @@
+""" Setip logging to stderr """
+import logging
+import sys
+
+root = logging.getLogger()
+root.setLevel(logging.WARN)
+
+handler = logging.StreamHandler(sys.stderr)
+handler.setLevel(logging.DEBUG)
+formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+handler.setFormatter(formatter)
+root.addHandler(handler)
